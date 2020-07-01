@@ -7,7 +7,6 @@ FROM employees e
 INNER JOIN salaries s ON e.emp_no = s.emp_no
 ORDER BY emp_no;
 
-
 SELECT e.first_name,
 	   e.last_name,
 	   e.hire_date
@@ -61,4 +60,13 @@ SELECT e.last_name,
 	   COUNT(e.last_name) AS "Last Name Count"
 FROM employees e 
 GROUP BY e.last_name
-ORDER BY COUNT(e.last_name) DESC
+ORDER BY COUNT(e.last_name) DESC;
+
+
+SELECT title, 
+	   Avg(salary)
+FROM employees e 
+INNER JOIN titles t ON t.title_id = e.emp_title_id
+INNER JOIN salaries s ON e.emp_no = s.emp_no
+GROUP BY title
+
