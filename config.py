@@ -1,2 +1,2 @@
-database = "postgres"
-password = "postgres"
+database = ""
+password = ""

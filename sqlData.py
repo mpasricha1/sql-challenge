@@ -5,8 +5,6 @@ from sqlalchemy.orm import sessionmaker
 from config import database, password
 import pandas as pd 
 import matplotlib.pyplot as plt
-import time
-from tqdm import tqdm
 
 
 engine = create_engine(f'postgresql+psycopg2://{database}:{password}@localhost:5432/company_db', echo=False)
@@ -66,6 +64,5 @@ def createDF(session):
 	return df
 
 title_df = createDF(s)
-print(title_df)
 plotBarChart(title_df)
 plotHisto(title_df)
